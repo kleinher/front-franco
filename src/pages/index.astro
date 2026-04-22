@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
 import ProjectGrid from '../components/ProjectGrid.astro';
 import Services from '../components/Services.astro';
 import About from '../components/About.astro';
@@ -11,10 +10,20 @@ import { projects } from '../data/projects';
 import { services } from '../data/services';
 import { team } from '../data/team';
 ---
-<Layout title="García & Ríos Ingeniería Civil">
+<Layout title="Franco García — Visualización Arquitectónica">
   <Nav />
-  <main>
-    <Hero />
+  <main class="pt-12">
+
+    <!-- Intro mínima estilo mir.no -->
+    <div class="px-5 md:px-8 py-6 border-b border-neutral-100 flex items-center justify-between">
+      <p class="text-[10px] tracking-widest uppercase text-neutral-400">
+        Visualización arquitectónica — Buenos Aires
+      </p>
+      <p class="text-[10px] tracking-widest uppercase text-neutral-300 hidden md:block">
+        {projects.length} proyectos
+      </p>
+    </div>
+
     <ProjectGrid projects={projects} />
     <Services services={services} />
     <About team={team} />
