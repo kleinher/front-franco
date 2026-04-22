@@ -1,0 +1,69 @@
+---
+---
+<section id="contacto" class="py-24 px-6 md:px-12 bg-neutral-950 text-white">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-light tracking-wide mb-6">Contacto</h2>
+      <p class="text-neutral-400 font-light leading-relaxed max-w-sm mb-10">
+        ¿Tenés un proyecto en mente? Escribinos y te respondemos a la brevedad.
+      </p>
+      <div class="space-y-3 text-sm text-neutral-400 font-light">
+        <p>
+          <span class="text-neutral-600 text-xs tracking-widest uppercase block mb-1">Email</span>
+          contacto@estudio.com.ar
+        </p>
+        <p>
+          <span class="text-neutral-600 text-xs tracking-widest uppercase block mb-1 mt-4">Teléfono</span>
+          +54 11 0000-0000
+        </p>
+        <p>
+          <span class="text-neutral-600 text-xs tracking-widest uppercase block mb-1 mt-4">Dirección</span>
+          Av. Corrientes 1234, Piso 8<br />Buenos Aires, Argentina
+        </p>
+      </div>
+    </div>
+
+    <form
+      action="https://formspree.io/f/XXXXXXXX"
+      method="POST"
+      class="space-y-5"
+    >
+      <div>
+        <label class="text-xs tracking-widest uppercase text-neutral-500 block mb-2">Nombre</label>
+        <input
+          type="text"
+          name="name"
+          required
+          class="w-full bg-neutral-900 border border-neutral-800 text-white text-sm px-4 py-3 focus:outline-none focus:border-neutral-500 transition-colors placeholder-neutral-600"
+          placeholder="Tu nombre"
+        />
+      </div>
+      <div>
+        <label class="text-xs tracking-widest uppercase text-neutral-500 block mb-2">Email</label>
+        <input
+          type="email"
+          name="email"
+          required
+          class="w-full bg-neutral-900 border border-neutral-800 text-white text-sm px-4 py-3 focus:outline-none focus:border-neutral-500 transition-colors placeholder-neutral-600"
+          placeholder="tu@email.com"
+        />
+      </div>
+      <div>
+        <label class="text-xs tracking-widest uppercase text-neutral-500 block mb-2">Mensaje</label>
+        <textarea
+          name="message"
+          required
+          rows="5"
+          class="w-full bg-neutral-900 border border-neutral-800 text-white text-sm px-4 py-3 focus:outline-none focus:border-neutral-500 transition-colors placeholder-neutral-600 resize-none"
+          placeholder="Contanos sobre tu proyecto..."
+        ></textarea>
+      </div>
+      <button
+        type="submit"
+        class="w-full bg-white text-neutral-950 text-sm tracking-widest uppercase py-4 hover:bg-neutral-200 transition-colors duration-200"
+      >
+        Enviar mensaje
+      </button>
+    </form>
+  </div>
+</section>
