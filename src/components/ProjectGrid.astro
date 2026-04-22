@@ -9,7 +9,7 @@ const { projects } = Astro.props;
 <section id="proyectos">
   <div class="grid grid-cols-1 md:grid-cols-2">
     {projects.map((project) => (
-      <article class="group relative overflow-hidden cursor-pointer">
+      <a href={`/trabajo/${project.id}`} class="group relative overflow-hidden block">
         <div class="aspect-[4/3]">
           <img
             src={project.image}
@@ -27,7 +27,7 @@ const { projects } = Astro.props;
             <p class="text-white/70 text-xs font-light mt-1">{project.location}</p>
           </div>
         </div>
-      </article>
+      </a>
     ))}
   </div>
 </section>
