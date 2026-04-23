@@ -8,56 +8,67 @@ const { team } = Astro.props;
 ---
 <section id="nosotros" class="border-t border-neutral-100">
 
-  <!-- Texto intro -->
   <div class="grid grid-cols-1 md:grid-cols-[200px_1fr] border-b border-neutral-100">
     <div class="px-5 md:px-8 py-14 md:py-20 border-b md:border-b-0 md:border-r border-neutral-100">
-      <span class="text-[10px] tracking-widest uppercase text-neutral-400">Nosotros</span>
+      <span class="text-[10px] tracking-widest uppercase text-neutral-400 i18n-es">Nosotros</span>
+      <span class="text-[10px] tracking-widest uppercase text-neutral-400 i18n-en">About</span>
     </div>
     <div class="px-7 md:px-16 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
       <div class="space-y-5 text-xs text-neutral-500 font-light leading-relaxed">
-        <p>
+        <p class="i18n-es">
           Somos un estudio de visualización arquitectónica fundado en Buenos Aires. Producimos renders fotorrealistas, animaciones y material visual para estudios de arquitectura, desarrolladoras y constructoras.
         </p>
-        <p>
+        <p class="i18n-en">
+          We are an architectural visualization studio founded in Buenos Aires. We produce photorealistic renders, animations and visual material for architecture studios, developers and construction companies.
+        </p>
+        <p class="i18n-es">
           Cada imagen es una oportunidad para mostrar un proyecto antes de que exista. Trabajamos con la arquitectura como punto de partida y la imagen como resultado final.
+        </p>
+        <p class="i18n-en">
+          Every image is a chance to show a project before it exists. We use architecture as a starting point and the image as the final result.
         </p>
       </div>
       <div class="grid grid-cols-3 gap-6 md:gap-10">
         <div>
           <p class="text-2xl font-light text-neutral-900">+80</p>
-          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1">Proyectos</p>
+          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1 i18n-es">Proyectos</p>
+          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1 i18n-en">Projects</p>
         </div>
         <div>
           <p class="text-2xl font-light text-neutral-900">8</p>
-          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1">Años</p>
+          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1 i18n-es">Años</p>
+          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1 i18n-en">Years</p>
         </div>
         <div>
-          <p class="text-2xl font-light text-neutral-900">5</p>
-          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1">Países</p>
+          <p class="text-2xl font-light text-neutral-900">3</p>
+          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1 i18n-es">Países</p>
+          <p class="text-[10px] tracking-widest uppercase text-neutral-400 mt-1 i18n-en">Countries</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Equipo -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-x divide-neutral-100">
-    {team.map(member => (
-      <div class="group border-b border-neutral-100 lg:border-b-0">
-        <div class="aspect-[3/4] overflow-hidden">
-          <img
-            src={member.image}
-            alt={member.name}
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
-            loading="lazy"
-          />
+  <!-- Equipo — sin fotos -->
+  <div class="grid grid-cols-1 md:grid-cols-[200px_1fr]">
+    <div class="px-5 md:px-8 py-10 border-b md:border-b-0 md:border-r border-neutral-100 flex items-start">
+      <span class="text-[10px] tracking-widest uppercase text-neutral-400 i18n-es">Equipo</span>
+      <span class="text-[10px] tracking-widest uppercase text-neutral-400 i18n-en">Team</span>
+    </div>
+    <div class="divide-y divide-neutral-100">
+      {team.map(member => (
+        <div class="px-7 md:px-16 py-8 grid grid-cols-1 md:grid-cols-[180px_1fr] gap-4 items-start">
+          <div>
+            <p class="text-sm font-normal text-neutral-900">{member.name}</p>
+            <p class="text-[10px] tracking-wide text-neutral-400 mt-1 i18n-es">{member.role}</p>
+            <p class="text-[10px] tracking-wide text-neutral-400 mt-1 i18n-en">{member.role_en}</p>
+          </div>
+          <div>
+            <p class="text-[11px] text-neutral-400 leading-relaxed font-light i18n-es">{member.bio}</p>
+            <p class="text-[11px] text-neutral-400 leading-relaxed font-light i18n-en">{member.bio_en}</p>
+          </div>
         </div>
-        <div class="px-5 py-6">
-          <p class="text-xs text-neutral-900 font-normal">{member.name}</p>
-          <p class="text-[10px] text-neutral-400 tracking-wide mt-1">{member.role}</p>
-          <p class="text-[11px] text-neutral-400 leading-relaxed mt-3 font-light">{member.bio}</p>
-        </div>
-      </div>
-    ))}
+      ))}
+    </div>
   </div>
 
 </section>

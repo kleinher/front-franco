@@ -2,10 +2,12 @@ export interface Project {
   id: string;
   title: string;
   category: string;
+  category_en: string;
   year: number;
   location: string;
   image: string;
   description: string;
+  description_en: string;
   gallery: string[];
 }
 
@@ -14,10 +16,12 @@ export const projects: Project[] = [
     id: 'torre-residencial-norte',
     title: 'Torre Residencial Norte',
     category: 'Exterior',
+    category_en: 'Exterior',
     year: 2024,
     location: 'Buenos Aires, Argentina',
     image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80',
     description: 'Visualización exterior de torre residencial de 28 pisos. Render fotorrealista con iluminación natural al atardecer.',
+    description_en: 'Exterior visualization of a 28-floor residential tower. Photorealistic render with natural lighting at sunset.',
     gallery: [
       'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=85',
       'https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=1600&q=85',
@@ -30,10 +34,12 @@ export const projects: Project[] = [
     id: 'lobby-corporativo',
     title: 'Lobby Corporativo Libertad',
     category: 'Interior',
+    category_en: 'Interior',
     year: 2024,
     location: 'Montevideo, Uruguay',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80',
-    description: 'Render de interiores para lobby de edificio corporativo. Materiales PBR, iluminación artificial y vegetación de alta densidad.',
+    description: 'Render de interiores para lobby de edificio corporativo. Materiales PBR, iluminación artificial y vegetación.',
+    description_en: 'Interior render for a corporate building lobby. PBR materials, artificial lighting and vegetation.',
     gallery: [
       'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85',
       'https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=85',
@@ -45,10 +51,12 @@ export const projects: Project[] = [
     id: 'conjunto-habitacional',
     title: 'Conjunto Habitacional Parque',
     category: 'Masterplan',
+    category_en: 'Masterplan',
     year: 2024,
     location: 'Rosario, Argentina',
     image: 'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1200&q=80',
-    description: 'Vista aérea de masterplan residencial para 320 unidades. Animación de recorrido y renders de implantación.',
+    description: 'Vista aérea de masterplan residencial para 320 unidades. Renders de implantación y animación de recorrido.',
+    description_en: 'Aerial view of residential masterplan for 320 units. Implantation renders and walkthrough animation.',
     gallery: [
       'https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1600&q=85',
       'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=85',
@@ -61,10 +69,12 @@ export const projects: Project[] = [
     id: 'vivienda-unifamiliar-bue',
     title: 'Casa Palermo',
     category: 'Exterior',
+    category_en: 'Exterior',
     year: 2023,
     location: 'Buenos Aires, Argentina',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
     description: 'Vivienda unifamiliar con patio central. Renders de día y noche, vistas exteriores y recorrido interior.',
+    description_en: 'Single-family home with central courtyard. Day and night renders, exterior views and interior walkthrough.',
     gallery: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=85',
       'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1600&q=85',
@@ -78,10 +88,12 @@ export const projects: Project[] = [
     id: 'oficinas-concepto',
     title: 'Oficinas Open Space Nómade',
     category: 'Interior',
+    category_en: 'Interior',
     year: 2023,
     location: 'Córdoba, Argentina',
     image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&q=80',
-    description: 'Visualización de espacios de trabajo colaborativo para desarrolladora inmobiliaria. 12 renders finales + video walkthrough.',
+    description: 'Visualización de espacios de trabajo colaborativo. 12 renders finales y video walkthrough.',
+    description_en: 'Visualization of collaborative work spaces. 12 final renders and video walkthrough.',
     gallery: [
       'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1600&q=85',
       'https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=1600&q=85',
@@ -93,10 +105,12 @@ export const projects: Project[] = [
     id: 'hotel-boutique',
     title: 'Hotel Boutique Serrano',
     category: 'Interior',
+    category_en: 'Interior',
     year: 2023,
     location: 'Mendoza, Argentina',
     image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80',
-    description: 'Propuesta visual para hotel de 5 estrellas. Habitaciones, áreas comunes y terraza exterior con piscina.',
+    description: 'Propuesta visual para hotel de 5 estrellas. Habitaciones, áreas comunes y terraza con piscina.',
+    description_en: 'Visual proposal for a 5-star hotel. Rooms, common areas and terrace with pool.',
     gallery: [
       'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1600&q=85',
       'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=1600&q=85',
@@ -109,10 +123,12 @@ export const projects: Project[] = [
     id: 'edificio-comercial',
     title: 'Centro Comercial Borde',
     category: 'Exterior',
+    category_en: 'Exterior',
     year: 2022,
     location: 'Santiago, Chile',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80',
-    description: 'Visualización de fachadas para centro comercial de uso mixto. Renders de contexto urbano y detalle de materiales.',
+    description: 'Visualización de fachadas para centro comercial de uso mixto. Renders de contexto urbano.',
+    description_en: 'Facade visualization for a mixed-use commercial center. Urban context renders.',
     gallery: [
       'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=85',
       'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600&q=85',
@@ -122,18 +138,37 @@ export const projects: Project[] = [
   },
   {
     id: 'departamento-tipo',
-    title: 'Departamento Tipo — Proyecto La Pampa',
+    title: 'Departamento Tipo — La Pampa',
     category: 'Interior',
+    category_en: 'Interior',
     year: 2022,
     location: 'Buenos Aires, Argentina',
     image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80',
-    description: 'Renders de unidades tipo para comercialización de emprendimiento. Living, dormitorios y balcón con ambientación completa.',
+    description: 'Renders de unidades tipo para comercialización. Living, dormitorios y balcón con ambientación completa.',
+    description_en: 'Unit renders for property marketing. Living room, bedrooms and balcony fully staged.',
     gallery: [
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=85',
       'https://images.unsplash.com/photo-1615873968403-89e068629265?w=1600&q=85',
       'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=1600&q=85',
       'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=1600&q=85',
       'https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1600&q=85',
+    ],
+  },
+  {
+    id: 'casa-berlin',
+    title: 'Casa Grunewald',
+    category: 'Exterior',
+    category_en: 'Exterior',
+    year: 2024,
+    location: 'Berlín, Alemania',
+    image: 'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200&q=80',
+    description: 'Vivienda unifamiliar en Berlín. Renders de implantación en contexto, vistas exteriores y detalle de materiales.',
+    description_en: 'Single-family house in Berlin. Site context renders, exterior views and material detail.',
+    gallery: [
+      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1600&q=85',
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=85',
+      'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=85',
+      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&q=85',
     ],
   },
 ];

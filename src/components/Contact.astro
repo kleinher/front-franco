@@ -4,64 +4,96 @@
   <div class="grid grid-cols-1 md:grid-cols-[200px_1fr]">
 
     <div class="px-5 md:px-8 py-14 md:py-20 border-b md:border-b-0 md:border-r border-neutral-100">
-      <span class="text-[10px] tracking-widest uppercase text-neutral-400">Contacto</span>
+      <span class="text-[10px] tracking-widest uppercase text-neutral-400 i18n-es">Contacto</span>
+      <span class="text-[10px] tracking-widest uppercase text-neutral-400 i18n-en">Contact</span>
     </div>
 
     <div class="px-7 md:px-16 py-14 md:py-20 grid grid-cols-1 md:grid-cols-2 gap-14 items-start">
 
       <div>
-        <p class="text-xs text-neutral-500 font-light leading-relaxed max-w-xs mb-10">
+        <p class="text-xs text-neutral-500 font-light leading-relaxed max-w-xs mb-10 i18n-es">
           ¿Necesitás visualizar tu proyecto? Contanos de qué se trata y te respondemos a la brevedad.
+        </p>
+        <p class="text-xs text-neutral-500 font-light leading-relaxed max-w-xs mb-10 i18n-en">
+          Working on a project? Tell us about it and we'll get back to you shortly.
         </p>
         <div class="space-y-6 text-[11px] text-neutral-400 font-light">
           <div>
             <span class="text-[10px] tracking-widest uppercase text-neutral-300 block mb-1">Email</span>
-            contacto@estudio.com.ar
+            contacto@estudio-mud.com
           </div>
           <div>
-            <span class="text-[10px] tracking-widest uppercase text-neutral-300 block mb-1">Teléfono</span>
+            <span class="text-[10px] tracking-widest uppercase text-neutral-300 block mb-1 i18n-es">Teléfono</span>
+            <span class="text-[10px] tracking-widest uppercase text-neutral-300 block mb-1 i18n-en">Phone</span>
             +54 11 0000-0000
           </div>
           <div>
-            <span class="text-[10px] tracking-widest uppercase text-neutral-300 block mb-1">Dirección</span>
-            Av. Corrientes 1234, Piso 8<br />Buenos Aires, Argentina
+            <span class="text-[10px] tracking-widest uppercase text-neutral-300 block mb-1 i18n-es">Ubicaciones</span>
+            <span class="text-[10px] tracking-widest uppercase text-neutral-300 block mb-1 i18n-en">Locations</span>
+            Berlín &ensp;—&ensp; Cádiz &ensp;—&ensp; Buenos Aires
           </div>
         </div>
       </div>
 
       <form action="https://formspree.io/f/XXXXXXXX" method="POST" class="space-y-5">
         <div>
-          <label class="text-[10px] tracking-widest uppercase text-neutral-400 block mb-2">Nombre</label>
+          <label class="text-[10px] tracking-widest uppercase text-neutral-400 block mb-2 i18n-es">Nombre</label>
+          <label class="text-[10px] tracking-widest uppercase text-neutral-400 block mb-2 i18n-en">Name</label>
           <input
             type="text" name="name" required
+            class="i18n-placeholder w-full border-b border-neutral-200 text-xs text-neutral-900 py-2.5 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent"
+            data-placeholder-es="Tu nombre"
+            data-placeholder-en="Your name"
             placeholder="Tu nombre"
-            class="w-full border-b border-neutral-200 text-xs text-neutral-900 py-2.5 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent placeholder-neutral-300"
           />
         </div>
         <div>
           <label class="text-[10px] tracking-widest uppercase text-neutral-400 block mb-2">Email</label>
           <input
             type="email" name="email" required
+            class="i18n-placeholder w-full border-b border-neutral-200 text-xs text-neutral-900 py-2.5 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent"
+            data-placeholder-es="tu@email.com"
+            data-placeholder-en="you@email.com"
             placeholder="tu@email.com"
-            class="w-full border-b border-neutral-200 text-xs text-neutral-900 py-2.5 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent placeholder-neutral-300"
           />
         </div>
         <div>
-          <label class="text-[10px] tracking-widest uppercase text-neutral-400 block mb-2">Mensaje</label>
+          <label class="text-[10px] tracking-widest uppercase text-neutral-400 block mb-2 i18n-es">Mensaje</label>
+          <label class="text-[10px] tracking-widest uppercase text-neutral-400 block mb-2 i18n-en">Message</label>
           <textarea
             name="message" required rows="4"
+            class="i18n-placeholder w-full border-b border-neutral-200 text-xs text-neutral-900 py-2.5 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent resize-none"
+            data-placeholder-es="Contanos sobre tu proyecto..."
+            data-placeholder-en="Tell us about your project..."
             placeholder="Contanos sobre tu proyecto..."
-            class="w-full border-b border-neutral-200 text-xs text-neutral-900 py-2.5 focus:outline-none focus:border-neutral-900 transition-colors bg-transparent placeholder-neutral-300 resize-none"
           ></textarea>
         </div>
         <button
           type="submit"
           class="text-[10px] tracking-widest uppercase text-neutral-900 border border-neutral-900 px-6 py-3 hover:bg-neutral-900 hover:text-white transition-colors duration-200 mt-2"
         >
-          Enviar
+          <span class="i18n-es">Enviar</span>
+          <span class="i18n-en">Send</span>
         </button>
       </form>
 
     </div>
   </div>
 </section>
+
+<script>
+  // Actualiza placeholders de inputs cuando cambia el idioma
+  function updatePlaceholders() {
+    const lang = localStorage.getItem('lang') || 'es';
+    document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('.i18n-placeholder').forEach(el => {
+      const ph = (el as HTMLElement).dataset[lang === 'es' ? 'placeholderEs' : 'placeholderEn'];
+      if (ph) el.placeholder = ph;
+    });
+  }
+
+  updatePlaceholders();
+
+  document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => setTimeout(updatePlaceholders, 50));
+  });
+</script>

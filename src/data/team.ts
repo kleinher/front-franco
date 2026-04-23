@@ -1,27 +1,31 @@
 export interface TeamMember {
   name: string;
   role: string;
+  role_en: string;
   bio: string;
-  image: string;
+  bio_en: string;
 }
 
 export const team: TeamMember[] = [
   {
     name: 'Franco García',
     role: 'Director — Visualización 3D',
+    role_en: 'Director — 3D Visualization',
     bio: 'Arquitecto (FADU-UBA). Especializado en visualización fotorrealista con más de 10 años produciendo imágenes para estudios de arquitectura en Argentina y el exterior.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80',
+    bio_en: 'Architect (FADU-UBA). Specialized in photorealistic visualization with over 10 years producing images for architecture studios in Argentina and abroad.',
   },
   {
     name: 'Valentina Torres',
     role: 'Renders de interiores',
+    role_en: 'Interior renders',
     bio: 'Diseñadora de interiores con especialización en iluminación artificial y ambientación. Referente en renders residenciales de alta gama.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80',
+    bio_en: 'Interior designer specialized in artificial lighting and staging. Reference in high-end residential renders.',
   },
   {
     name: 'Matías Roldán',
     role: 'Animación y post-producción',
+    role_en: 'Animation & post-production',
     bio: 'Artista 3D especializado en animación arquitectónica y composición fotorrealista. Formado en Unreal Engine y Cinema 4D.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+    bio_en: '3D artist specialized in architectural animation and photorealistic compositing. Trained in Unreal Engine and Cinema 4D.',
   },
 ];
