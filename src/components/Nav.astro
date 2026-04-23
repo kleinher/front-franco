@@ -3,11 +3,11 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
   <nav class="flex items-center justify-between px-5 md:px-8 h-14" style="text-shadow: 0 1px 4px rgba(0,0,0,0.45)">
 
-    <a href="/" class="text-white/50 text-sm font-light tracking-widest lowercase hover:text-white/80 transition-colors duration-200">
+    <a href="/" class="text-white/40 text-sm font-light tracking-widest lowercase hover:text-white/70 transition-colors duration-200">
       mud
     </a>
 
-    <!-- Links desktop -->
+    <!-- Desktop -->
     <ul class="hidden md:flex items-center gap-9">
       <li>
         <a href="/#proyectos" class="text-[11px] tracking-widest uppercase text-white hover:text-white/60 transition-colors duration-150">
@@ -33,26 +33,21 @@
           <span class="i18n-en">Contact</span>
         </a>
       </li>
-      <!-- Lang toggle -->
-      <li>
-        <button
-          data-lang-toggle
-          class="text-[11px] tracking-widest uppercase text-white/40 hover:text-white transition-colors duration-150"
-        >
-          <span data-lang-indicator>EN</span>
-        </button>
+      <!-- Selector de idioma: ES · EN -->
+      <li class="flex items-center gap-1.5 text-[11px] tracking-widest uppercase">
+        <button data-set-lang="es" class="lang-opt transition-colors duration-150 hover:text-white">ES</button>
+        <span class="text-white/20">·</span>
+        <button data-set-lang="en" class="lang-opt transition-colors duration-150 hover:text-white">EN</button>
       </li>
     </ul>
 
-    <!-- Mobile: lang + hamburger -->
+    <!-- Mobile: selector + hamburguesa -->
     <div class="md:hidden flex items-center gap-5">
-      <button
-        data-lang-toggle
-        class="text-[11px] tracking-widest uppercase text-white/50 hover:text-white transition-colors"
-        style="text-shadow: 0 1px 4px rgba(0,0,0,0.45)"
-      >
-        <span data-lang-indicator>EN</span>
-      </button>
+      <div class="flex items-center gap-1.5 text-[11px] tracking-widest uppercase" style="text-shadow: 0 1px 4px rgba(0,0,0,0.45)">
+        <button data-set-lang="es" class="lang-opt transition-colors duration-150">ES</button>
+        <span class="text-white/20">·</span>
+        <button data-set-lang="en" class="lang-opt transition-colors duration-150">EN</button>
+      </div>
       <button id="menu-btn" class="flex flex-col gap-[5px] p-1" aria-label="Menú">
         <span class="w-5 h-px bg-white block transition-all duration-200" id="line1"></span>
         <span class="w-5 h-px bg-white block transition-all duration-200" id="line2"></span>
@@ -68,51 +63,58 @@
   class="fixed inset-0 z-40 bg-neutral-950 flex flex-col items-start justify-end px-7 pb-16 gap-7 translate-y-full transition-transform duration-300 ease-in-out"
 >
   <a href="/#proyectos" class="mobile-link text-2xl font-light text-white tracking-wide">
-    <span class="i18n-es">Proyectos</span>
-    <span class="i18n-en">Work</span>
+    <span class="i18n-es">Proyectos</span><span class="i18n-en">Work</span>
   </a>
   <a href="/#servicios" class="mobile-link text-2xl font-light text-white tracking-wide">
-    <span class="i18n-es">Servicios</span>
-    <span class="i18n-en">Services</span>
+    <span class="i18n-es">Servicios</span><span class="i18n-en">Services</span>
   </a>
   <a href="/#nosotros" class="mobile-link text-2xl font-light text-white tracking-wide">
-    <span class="i18n-es">Nosotros</span>
-    <span class="i18n-en">About</span>
+    <span class="i18n-es">Nosotros</span><span class="i18n-en">About</span>
   </a>
   <a href="/#contacto" class="mobile-link text-2xl font-light text-white tracking-wide">
-    <span class="i18n-es">Contacto</span>
-    <span class="i18n-en">Contact</span>
+    <span class="i18n-es">Contacto</span><span class="i18n-en">Contact</span>
   </a>
 </div>
 
+<style is:global>
+  /* Selector de idioma: resalta el activo */
+  .lang-opt { color: rgba(255,255,255,0.3); }
+  html:not(.lang-en) [data-set-lang="es"] { color: white; }
+  html.lang-en [data-set-lang="en"] { color: white; }
+</style>
+
 <script>
-  const btn = document.getElementById('menu-btn');
-  const menu = document.getElementById('mobile-menu');
+  /* Botones ES / EN */
+  document.querySelectorAll<HTMLButtonElement>('[data-set-lang]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.setLang!;
+      document.documentElement.classList.toggle('lang-en', lang === 'en');
+      localStorage.setItem('lang', lang);
+    });
+  });
+
+  /* Hamburguesa mobile */
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
   const l1 = document.getElementById('line1');
   const l2 = document.getElementById('line2');
   const l3 = document.getElementById('line3');
   let open = false;
 
-  btn?.addEventListener('click', () => {
+  menuBtn?.addEventListener('click', () => {
     open = !open;
-    menu?.classList.toggle('translate-y-full', !open);
+    mobileMenu?.classList.toggle('translate-y-full', !open);
     if (l1 && l2 && l3) {
-      if (open) {
-        l1.style.transform = 'translateY(6px) rotate(45deg)';
-        l2.style.opacity = '0';
-        l3.style.transform = 'translateY(-6px) rotate(-45deg)';
-      } else {
-        l1.style.transform = '';
-        l2.style.opacity = '';
-        l3.style.transform = '';
-      }
+      l1.style.transform = open ? 'translateY(6px) rotate(45deg)' : '';
+      l2.style.opacity  = open ? '0' : '';
+      l3.style.transform = open ? 'translateY(-6px) rotate(-45deg)' : '';
     }
   });
 
   document.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', () => {
       open = false;
-      menu?.classList.add('translate-y-full');
+      mobileMenu?.classList.add('translate-y-full');
       if (l1 && l2 && l3) {
         l1.style.transform = '';
         l2.style.opacity = '';

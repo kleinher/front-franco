@@ -20,7 +20,7 @@ const { title = 'mud — Visualización Arquitectónica' } = Astro.props;
         if (l === 'en') document.documentElement.classList.add('lang-en');
       })();
     </script>
-    <style>
+    <style is:global>
       html:not(.lang-en) .i18n-en { display: none !important; }
       html.lang-en .i18n-es { display: none !important; }
     </style>
@@ -28,23 +28,10 @@ const { title = 'mud — Visualización Arquitectónica' } = Astro.props;
   <body class="bg-white text-neutral-900 font-sans antialiased">
     <slot />
     <script>
-      function setLang(lang: string) {
-        document.documentElement.classList.toggle('lang-en', lang === 'en');
-        localStorage.setItem('lang', lang);
-        document.querySelectorAll<HTMLElement>('[data-lang-indicator]').forEach(el => {
-          el.textContent = lang === 'es' ? 'EN' : 'ES';
-        });
-      }
-
+      // Aplica idioma guardado al cargar (el script inline del head ya lo hizo,
+      // esto sincroniza cualquier cosa que se renderice después)
       const stored = localStorage.getItem('lang') || 'es';
-      setLang(stored);
-
-      document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const current = localStorage.getItem('lang') || 'es';
-          setLang(current === 'es' ? 'en' : 'es');
-        });
-      });
+      document.documentElement.classList.toggle('lang-en', stored === 'en');
     </script>
   </body>
 </html>
