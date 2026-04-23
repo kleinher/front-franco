@@ -1,6 +1,6 @@
 ---
 ---
-<header class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+<header class="fixed top-0 left-0 right-0 z-50 bg-black/35 backdrop-blur-sm">
   <nav class="flex items-center justify-between px-5 md:px-8 h-14" style="text-shadow: 0 1px 4px rgba(0,0,0,0.45)">
 
     <a href="/" class="text-white/40 text-sm font-light tracking-widest lowercase hover:text-white/70 transition-colors duration-200">
@@ -33,20 +33,20 @@
           <span class="i18n-en">Contact</span>
         </a>
       </li>
-      <!-- Selector de idioma: ES · EN -->
-      <li class="flex items-center gap-1.5 text-[11px] tracking-widest uppercase">
-        <button data-set-lang="es" class="lang-opt transition-colors duration-150 hover:text-white">ES</button>
-        <span class="text-white/20">·</span>
-        <button data-set-lang="en" class="lang-opt transition-colors duration-150 hover:text-white">EN</button>
+      <!-- Pill selector de idioma -->
+      <li>
+        <div class="lang-pill flex items-center rounded-full border border-white/20 overflow-hidden text-[10px] tracking-widest uppercase">
+          <button data-set-lang="es" class="lang-opt px-3 py-1.5 transition-colors duration-150">ES</button>
+          <button data-set-lang="en" class="lang-opt px-3 py-1.5 transition-colors duration-150">EN</button>
+        </div>
       </li>
     </ul>
 
     <!-- Mobile: selector + hamburguesa -->
     <div class="md:hidden flex items-center gap-5">
-      <div class="flex items-center gap-1.5 text-[11px] tracking-widest uppercase" style="text-shadow: 0 1px 4px rgba(0,0,0,0.45)">
-        <button data-set-lang="es" class="lang-opt transition-colors duration-150">ES</button>
-        <span class="text-white/20">·</span>
-        <button data-set-lang="en" class="lang-opt transition-colors duration-150">EN</button>
+      <div class="lang-pill flex items-center rounded-full border border-white/20 overflow-hidden text-[10px] tracking-widest uppercase" style="text-shadow: 0 1px 4px rgba(0,0,0,0.45)">
+        <button data-set-lang="es" class="lang-opt px-2.5 py-1.5 transition-colors duration-150">ES</button>
+        <button data-set-lang="en" class="lang-opt px-2.5 py-1.5 transition-colors duration-150">EN</button>
       </div>
       <button id="menu-btn" class="flex flex-col gap-[5px] p-1" aria-label="Menú">
         <span class="w-5 h-px bg-white block transition-all duration-200" id="line1"></span>
@@ -77,10 +77,9 @@
 </div>
 
 <style is:global>
-  /* Selector de idioma: resalta el activo */
-  .lang-opt { color: rgba(255,255,255,0.3); }
-  html:not(.lang-en) [data-set-lang="es"] { color: white; }
-  html.lang-en [data-set-lang="en"] { color: white; }
+  .lang-opt { color: rgba(255,255,255,0.35); }
+  html:not(.lang-en) [data-set-lang="es"] { color: white; background: rgba(255,255,255,0.12); }
+  html.lang-en     [data-set-lang="en"] { color: white; background: rgba(255,255,255,0.12); }
 </style>
 
 <script>
