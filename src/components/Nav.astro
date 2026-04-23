@@ -3,8 +3,21 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-black/35 backdrop-blur-sm">
   <nav class="flex items-center justify-between px-5 md:px-8 h-14" style="text-shadow: 0 1px 4px rgba(0,0,0,0.45)">
 
-    <a href="/" class="text-white/40 text-sm font-light tracking-widest lowercase hover:text-white/70 transition-colors duration-200">
-      mud
+    <a href="/" class="flex items-center gap-3 group opacity-75 hover:opacity-100 transition-opacity duration-200">
+      <!-- Símbolo: sección arquitectónica con dos barras escalonadas -->
+      <svg width="42" height="28" viewBox="0 0 54 34" fill="none" aria-hidden="true">
+        <!-- Barra superior (rellena) -->
+        <rect x="1" y="4" width="26" height="7" fill="white"/>
+        <!-- Barra inferior desplazada a la derecha (rellena) -->
+        <rect x="23" y="22" width="26" height="7" fill="white"/>
+        <!-- Outline fino: contorno completo de la forma escalonada -->
+        <path d="M1 4 H49 V11 H27 V22 H49 V29 H1 V22 H23 V11 H1 Z"
+              stroke="white" stroke-width="0.75" fill="none" opacity="0.35"/>
+      </svg>
+      <!-- Separador vertical -->
+      <span class="w-px h-5 bg-white/25 flex-shrink-0"></span>
+      <!-- Nombre -->
+      <span class="text-white/50 text-sm font-light tracking-widest lowercase group-hover:text-white/80 transition-colors duration-200">mud</span>
     </a>
 
     <!-- Desktop -->
