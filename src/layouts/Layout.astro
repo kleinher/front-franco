@@ -23,6 +23,11 @@ const { title = 'mud — Visualización Arquitectónica' } = Astro.props;
     <style is:global>
       html:not(.lang-en) .i18n-en { display: none !important; }
       html.lang-en .i18n-es { display: none !important; }
+
+      /* Pill selector de idioma — aplica en todas las páginas */
+      .lang-opt { color: rgba(255,255,255,0.35); }
+      html:not(.lang-en) [data-set-lang="es"] { color: white; background: rgba(255,255,255,0.12); }
+      html.lang-en [data-set-lang="en"]        { color: white; background: rgba(255,255,255,0.12); }
     </style>
   </head>
   <body class="bg-white text-neutral-900 font-sans antialiased">
