@@ -28,10 +28,17 @@ const { title = 'mud — Visualización Arquitectónica' } = Astro.props;
   <body class="bg-white text-neutral-900 font-sans antialiased">
     <slot />
     <script>
-      // Aplica idioma guardado al cargar (el script inline del head ya lo hizo,
-      // esto sincroniza cualquier cosa que se renderice después)
       const stored = localStorage.getItem('lang') || 'es';
       document.documentElement.classList.toggle('lang-en', stored === 'en');
+
+      // Maneja data-set-lang en cualquier página
+      document.querySelectorAll<HTMLButtonElement>('[data-set-lang]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.dataset.setLang!;
+          document.documentElement.classList.toggle('lang-en', lang === 'en');
+          localStorage.setItem('lang', lang);
+        });
+      });
     </script>
   </body>
 </html>
