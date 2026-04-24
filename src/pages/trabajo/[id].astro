@@ -89,7 +89,10 @@ const lastSingle = rest.length % 2 !== 0 ? rest[rest.length - 1] : null;
           <span class="i18n-en">{project.category_en}</span>
           &ensp;—&ensp;{project.year}
         </p>
-        <h1 class="text-xl md:text-2xl font-light text-neutral-900">{project.title}</h1>
+        <h1 class="text-xl md:text-2xl font-light text-neutral-900">
+          <span class="i18n-es">{project.title}</span>
+          <span class="i18n-en">{project.title_en}</span>
+        </h1>
       </div>
       <div class="md:text-right max-w-xs">
         <p class="text-[10px] tracking-widest uppercase text-neutral-400 mb-1">{project.location}</p>
@@ -118,7 +121,10 @@ const lastSingle = rest.length % 2 !== 0 ? rest[rest.length - 1] : null;
           <a href={`/trabajo/${prev.id}`} class="group flex flex-col gap-1">
             <span class="text-[10px] tracking-widest uppercase text-neutral-300 i18n-es">Anterior</span>
             <span class="text-[10px] tracking-widest uppercase text-neutral-300 i18n-en">Previous</span>
-            <span class="text-sm font-light text-neutral-900 group-hover:text-neutral-400 transition-colors">{prev.title}</span>
+            <span class="text-sm font-light text-neutral-900 group-hover:text-neutral-400 transition-colors">
+              <span class="i18n-es">{prev.title}</span>
+              <span class="i18n-en">{prev.title_en}</span>
+            </span>
           </a>
         ) : <span />}
       </div>
@@ -127,7 +133,10 @@ const lastSingle = rest.length % 2 !== 0 ? rest[rest.length - 1] : null;
           <a href={`/trabajo/${next.id}`} class="group flex flex-col gap-1 items-end">
             <span class="text-[10px] tracking-widest uppercase text-neutral-300 i18n-es">Siguiente</span>
             <span class="text-[10px] tracking-widest uppercase text-neutral-300 i18n-en">Next</span>
-            <span class="text-sm font-light text-neutral-900 group-hover:text-neutral-400 transition-colors">{next.title}</span>
+            <span class="text-sm font-light text-neutral-900 group-hover:text-neutral-400 transition-colors">
+              <span class="i18n-es">{next.title}</span>
+              <span class="i18n-en">{next.title_en}</span>
+            </span>
           </a>
         ) : <span />}
       </div>

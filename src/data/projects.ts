@@ -1,6 +1,7 @@
 export interface Project {
   id: string;
   title: string;
+  title_en: string;
   category: string;
   category_en: string;
   year: number;
@@ -15,6 +16,7 @@ export const projects: Project[] = [
   {
     id: 'torre-residencial-norte',
     title: 'Torre Residencial Norte',
+    title_en: 'North Residential Tower',
     category: 'Exterior',
     category_en: 'Exterior',
     year: 2024,
@@ -33,6 +35,7 @@ export const projects: Project[] = [
   {
     id: 'lobby-corporativo',
     title: 'Lobby Corporativo Libertad',
+    title_en: 'Libertad Corporate Lobby',
     category: 'Interior',
     category_en: 'Interior',
     year: 2024,
@@ -50,6 +53,7 @@ export const projects: Project[] = [
   {
     id: 'conjunto-habitacional',
     title: 'Conjunto Habitacional Parque',
+    title_en: 'Parque Housing Complex',
     category: 'Masterplan',
     category_en: 'Masterplan',
     year: 2024,
@@ -68,6 +72,7 @@ export const projects: Project[] = [
   {
     id: 'vivienda-unifamiliar-bue',
     title: 'Casa Palermo',
+    title_en: 'Palermo House',
     category: 'Exterior',
     category_en: 'Exterior',
     year: 2023,
@@ -87,6 +92,7 @@ export const projects: Project[] = [
   {
     id: 'oficinas-concepto',
     title: 'Oficinas Open Space Nómade',
+    title_en: 'Nómade Open Space Offices',
     category: 'Interior',
     category_en: 'Interior',
     year: 2023,
@@ -104,6 +110,7 @@ export const projects: Project[] = [
   {
     id: 'hotel-boutique',
     title: 'Hotel Boutique Serrano',
+    title_en: 'Serrano Boutique Hotel',
     category: 'Interior',
     category_en: 'Interior',
     year: 2023,
@@ -122,6 +129,7 @@ export const projects: Project[] = [
   {
     id: 'edificio-comercial',
     title: 'Centro Comercial Borde',
+    title_en: 'Borde Commercial Center',
     category: 'Exterior',
     category_en: 'Exterior',
     year: 2022,
@@ -139,6 +147,7 @@ export const projects: Project[] = [
   {
     id: 'departamento-tipo',
     title: 'Departamento Tipo — La Pampa',
+    title_en: 'Standard Apartment — La Pampa',
     category: 'Interior',
     category_en: 'Interior',
     year: 2022,
@@ -157,6 +166,7 @@ export const projects: Project[] = [
   {
     id: 'casa-berlin',
     title: 'Casa Grunewald',
+    title_en: 'Grunewald House',
     category: 'Exterior',
     category_en: 'Exterior',
     year: 2024,
